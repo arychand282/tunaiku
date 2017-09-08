@@ -7,3 +7,4 @@
 7. Please install following golang dependencies: </br>
 `$ go get "github.com/go-sql-driver/mysql"` </br> 
 `$ go get "github.com/gin-gonic/gin"`
+8. Run API on port:3001
