@@ -352,8 +352,22 @@ func main() {
 		}
 		fmt.Println(dataProfits)
 
+		maxProfit := dataProfits[0].Profit
+		maxDateBuy := dataProfits[0].DateBuy
+		maxDateSell := dataProfits[0].DateSell
+		for _, value := range dataProfits {
+			if value.Profit > maxProfit {
+				maxProfit = value.Profit
+				maxDateBuy = value.DateBuy
+				maxDateSell = value.DateSell
+			}
+		}
+
 		c.JSON(http.StatusOK, gin.H{
-			"data_profits": dataProfits,
+			"max_profit":    maxProfit,
+			"max_date_buy":  maxDateBuy,
+			"max_date_sell": maxDateSell,
+			"data_profits":  dataProfits,
 		})
 	})
 
